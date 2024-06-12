@@ -1,11 +1,12 @@
-import { Grid, styled, Container, Typography, Button } from "@mui/material";
+import { Grid, styled, Container, Typography, Button,  } from "@mui/material";
 import Avatar from "../../../../assets/images/avatar.png";
 import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
+import StyledButton from "../../../../components/StyledButton/StyledButton";
 
 const Hero = () => {
-  const StyledHero = styled("div")(() => ({
-    backgroundColor: "Black",
+  const StyledHero = styled("div")(({theme}) => ({
+    backgroundColor: theme.palette.primary.main,
     color: "White",
     height: "100vh",
   }));
@@ -24,27 +25,27 @@ const Hero = () => {
               <StyledImg src={Avatar} />
             </Grid>
             <Grid item xs={12} md={8}>
-              <Typography color="primary" variant="h1" textAlign="center">
+              <Typography color="primary.contrasText" variant="h1" textAlign="center">
                 {" "}
                 Kaio Eduardo
               </Typography>
-              <Typography color="primary" variant="h2" textAlign="center">
+              <Typography color="primary.contrasText" variant="h2" textAlign="center">
                 {" "}
                 I'm a FullStack Developer
               </Typography>
 
-              <Grid container display="flex" justifyContent="center">
+              <Grid container display="flex" justifyContent="center" spacing={3}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <Button>
-                    <DownloadIcon />
-                    Download CV
-                  </Button>
+                  <StyledButton>
+                  <DownloadIcon />
+                  <Typography>Download CV</Typography>
+                  </StyledButton>
                 </Grid>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <Button>
+                  <StyledButton>
                     <EmailIcon />
-                    Conctact Me
-                  </Button>
+                    <Typography>Conctact Me</Typography>
+                  </StyledButton>
                 </Grid>
               </Grid>
             </Grid>

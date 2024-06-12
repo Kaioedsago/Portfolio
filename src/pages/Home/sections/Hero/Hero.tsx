@@ -1,4 +1,4 @@
-import { Grid, styled, Container, Typography, Button,  } from "@mui/material";
+import { Grid, styled, Container, Typography,  } from "@mui/material";
 import Avatar from "../../../../assets/images/avatar.png";
 import DownloadIcon from "@mui/icons-material/Download";
 import EmailIcon from "@mui/icons-material/Email";
@@ -7,13 +7,16 @@ import StyledButton from "../../../../components/StyledButton/StyledButton";
 const Hero = () => {
   const StyledHero = styled("div")(({theme}) => ({
     backgroundColor: theme.palette.primary.main,
-    color: "White",
     height: "100vh",
+    display:"flex",
+    alignItems: "center"
+
   }));
 
-  const StyledImg = styled("img")(() => ({
-    width: "100%",
+  const StyledImg = styled("img")(({theme}) => ({
+    width: "80%",
     borderRadius: "50%",
+    border: `1px solid ${theme.palette.primary.contrastText}`,
   }));
 
   return (
@@ -21,10 +24,10 @@ const Hero = () => {
       <StyledHero>
         <Container>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={5}>
               <StyledImg src={Avatar} />
             </Grid>
-            <Grid item xs={12} md={8}>
+            <Grid item xs={12} md={7}>
               <Typography color="primary.contrasText" variant="h1" textAlign="center">
                 {" "}
                 Kaio Eduardo

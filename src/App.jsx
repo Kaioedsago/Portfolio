@@ -1,10 +1,10 @@
+import Home from "./sections/Home/Home"
 
-const App = () => {
-
-
+const  App = () => {
+  
   return (
     <>
-     Hi
+    <Home/>
     </>
   )
 }
